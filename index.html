@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="FeedbackApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--load bootstrap css-->
+    <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.min.css">
+    <!--load jquery.js-->
+    <script type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
+    <!--load bootstrap.js-->
+    <script type="text/javascript" src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--load angular-->
+    <script type="text/javascript" src="/angular/angular.js"></script>
+    <!--my app-->
+    <script type="text/javascript" src="/index.js"></script>
+</head>
+
+<body ng-controller="FeedbackCtrl as feedbackCtrl">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default text-muted" style="margin-top: 2rem">
+                    <div class="panel-body">
+                        <form action="" method="post" role="form" name="myForm" novalidate>
+                           <legend>Feedback</legend>
+
+                            <div class="form-group">
+                                <label for="name-id">Name</label>
+                                <input type="text" class="form-control" name="name" id="name-id" ng-model="feedbackCtrl.name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email-id">Email</label>
+                                <input type="email" class="form-control" name="email" id="email-id" ng-model="feedbackCtrl.email">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone-id">Phone</label>
+                                <input type="phone" class="form-control" name="phone" id="phone-id" ng-model="feedbackCtrl.phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone-id">Comment</label>
+                                <textarea type="phone" class="form-control" name="phone" id="phone-id" ng-model="feedbackCtrl.comment"></textarea>
+                            </div>
+
+                            <br>
+                           <legend>Experience</legend>
+                            <div class="form-group">
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="newsletter" id="news-id-1" ng-model="feedbackCtrl.radio_experience" value="good" checked="checked">
+                                        Good
+                                    </label>
+                                </div>
+
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="newsletter" id="news-id-2" ng-model="feedbackCtrl.radio_experience" value="neutral">
+                                        Neutral
+                                    </label>
+                                </div>
+
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="newsletter" id="news-id-3" ng-model="feedbackCtrl.radio_experience" value="bad">
+                                        Bad
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn btn-primary" ng-click="feedbackCtrl.processForm()">Submit</button>
+                            <button type="button" class="btn btn-primary" ng-click="feedbackCtrl.reset()">Reset</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
